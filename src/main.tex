@@ -10,6 +10,7 @@
 \usepackage{amssymb}
 \usepackage{nccmath}
 \usepackage[margin=0.2in]{geometry}
+\usepackage[T1]{fontenc}
 % Document
 \begin{document}
 
@@ -20,13 +21,15 @@
     \begin{itemize}
         \setlength\itemsep{0.1em}
         \item A set is a collection of unique/district objects. ie, $\{3,8,6\}$ It must not contain any duplicates.
-        \item X is an element of a $x \in A$, or X is not an element $x \notin A$ Empty set is $ 0 = \{\}$ 
-        \item A subset of another set (B) is if every element in the first is (A) in the other, $A \subseteq B$ 
-        \item An event is a subset of a sample space, ie $\{2,4, 6\} \subseteq \{1,2,3,4,5,6\}$ 
-        \item A union is the set of all elements in A or B, or both, $A \cup B$ 
-        \item An intersection of two sets is where A and B happen, $A \cap B$, or if its empty, $A \cap B = 0$ is disjoint. 
-        \item A compliment is all the elements in A where A did not occur, $A^c = 1 - A$ 
+        \item X is an element of a $x \in A$, or X is not an element $x \notin A$ Empty set is $ 0 = \{\}$
+        \item A subset of another set (B) is if every element in the first is (A) in the other, $A \subseteq B$
+        \item An event is a subset of a sample space, ie $\{2,4, 6\} \subseteq \{1,2,3,4,5,6\}$
+        \item A union is the set of all elements in A or B, or both, $A \cup B$
+        \item An intersection of two sets is where A and B happen, $A \cap B$, or if its empty, $A \cap B = 0$ is disjoint.
+        \item A compliment is all the elements in A where A did not occur, $A^c = 1 - A$
     \end{itemize}
+
+
     \section{Week 2}
     \begin{itemize}
         \setlength\itemsep{0.1em}
@@ -35,36 +38,42 @@
         \item $P(A \cup B) = P(A) + P(B)$ only if $P (A \cap B) = 0$, if not, $= P(A) + (B) - A \cap B$
         \item If we have two experiements with sample space $\omega$ then new sample space is $ \omega \times \omega $ or $ \omega ^n $
         \item Example: pick a number between 1 and 100... What is the possibility of: \newline
-            The number has one digit? $A=\{1,2,3,4,5,6,7,8,9\}$, $P(A) = \frac{|A|}{|\omega|} = \frac{9}{100}$ \newline
-            The number has two digits? $B=\{10,11,...,99\}$, $P(B) = \frac{9}{10}$ \newline
-            The probability of $ \% 4$? $C=\{4,8,12,16,...,100\}$, $P(C) = \frac{25}{100} = \frac{1}{4}$ \newline
-            What is $C^c$? $P(C^c) = 1 - P(C) = 1 - \frac{1}{4} = \frac{1}{4}$
+        The number has one digit? $A=\{1,2,3,4,5,6,7,8,9\}$, $P(A) = \frac{|A|}{|\omega|} = \frac{9}{100}$ \newline
+        The number has two digits? $B=\{10,11,...,99\}$, $P(B) = \frac{9}{10}$ \newline
+        The probability of $ \% 4$? $C=\{4,8,12,16,...,100\}$, $P(C) = \frac{25}{100} = \frac{1}{4}$ \newline
+        What is $C^c$? $P(C^c) = 1 - P(C) = 1 - \frac{1}{4} = \frac{1}{4}$
         \item $P(A|B) = \frac{P(A \cap B)}{P(B)}$
         \item Example: We toss three fair coins. What is the prob. that the first coin turns up as T given there was one T? \newline
-            $\omega = 2$, $\omega \times \omega \times \omega = \omega^3 = 8$ \newline
-            $P(A) =$ First coin toss is T, $P(B)$ = One coin is T. \newline
-            $P(B) = \{(H,H,T),(T,H,H),(H,T,H)\} = 3$ \newline
-            $P(A \cap B) = \{(T,H,H)\}  = 1$, $\frac{P(A \cap B)}{P(B)} = \frac{1}{3}$
+        $\omega = 2$, $\omega \times \omega \times \omega = \omega^3 = 8$ \newline
+        $P(A) =$ First coin toss is T, $P(B)$ = One coin is T. \newline
+        $P(B) = \{(H,H,T),(T,H,H),(H,T,H)\} = 3$ \newline
+        $P(A \cap B) = \{(T,H,H)\}  = 1$, $\frac{P(A \cap B)}{P(B)} = \frac{1}{3}$
     \end{itemize}
+
+
     \section{Week 3}
     \begin{itemize}
         \setlength\itemsep{0.1em}
-        \item $A^c = \omega \backslash A$, $A \backslash B = A \cap B^c$
+        \item $A^c = \omega \backslash A$, $A \backslash B = A \cap B^c c$
         \item Example (mad cow),T=Test is positive, B=has disease.: Given $P(T|B) = 0.7$, $P(T|B^c) = 0.1$, $P(T) = 0.2$, what is $P(B)$? $(P(B) = x)$ \newline
-            $P(A) = P(A|B)P(B) + P(A|B^c)P(B^c)$, $P(T) = P(T|B)P(B) + P(T|B^c)P(B^c) == 0.2 = 0.7x + 0.1(1-x) = \frac{1}{6}$
+        $P(A) = P(A|B)P(B) + P(A|B^c)P(B^c)$, $P(T) = P(T|B)P(B) + P(T|B^c)P(B^c) == 0.2 = 0.7x + 0.1(1-x) = \frac{1}{6}$
+        \item Conditional probability: $P(A|B) = \frac{P(A \cap B)}{P(B)}$
     \end{itemize}
+
+
     \section{Week 4}
     \begin{itemize}
         \setlength\itemsep{0.1em}
+        \item To check if A and B are independent, if $P(A \cap B) = P(A)P(B)$
         \item A, B, C are events, A, B ,C are jointly independent if all the following hold: \newline
-            \begin{fleqn}
-                $
-                P(A|B \cap C) = P(A) \newline
-                P(A|B \cap C^c) = P(A) \newline
-                P(A|B^c \cap C ) = P(A) \newline
-                P(A|B^c \cap C^c) = P(A) \newline
-                $
-            \end{fleqn}
+        \begin{fleqn}
+            $
+            P(A|B \cap C) = P(A) \newline
+            P(A|B \cap C^c) = P(A) \newline
+            P(A|B^c \cap C ) = P(A) \newline
+            P(A|B^c \cap C^c) = P(A) \newline
+            $
+        \end{fleqn}
         \item Bayes rule: $P(A|B) = P(B|A)\frac{P(A)}{P(B)}$
         \item Example: Supposed that a test for a certain rare disease is 95\% accurate. Ie, suppose that for a person with the disease,
         the test is positive with probability 0.95 and for a person without the disease, 0.95. Suppose that a random person drawn from
@@ -77,5 +86,23 @@
     \end{itemize}
 
 
-
+    \section{Week 5}
+    \begin{itemize}
+        \item A factory makes coins of which 10\% are defetive.
+        They have a $\frac{3}{4}$ probability of falling heads.
+        If you toss a coin three times and you see three heads, what is the probability that it is defective?
+        Hint: Draw tree or use Bayes Rule.
+        \begin{itemize}
+            \item D - The event that a coin is defective.
+            \item X - The event that we see three heads.
+            \item Find $P(D|X), = P(X|D)\frac{P(D)}{P(X)} = \frac{P(X \cap D)}{P(D)} \frac{P(D)}{P(X)} = \frac{P(X \cap D)}{P(X)}$
+            \item What is $P(X|D)? $ \guillemotright $(\frac{3}{4})^3 = \frac{27}{64}$
+            \item $P(X|D^c) = (\frac{1}{2})^2$
+            \item $P(D|X) = \frac{\frac{27}{63} \times 0.1}{\frac{27}{63} \times 0.1 + 0.9 \times \frac{1}{8}}$
+        \end{itemize}
+        \item A random variable is a function that maps every outcome in a sample space to a real number. Formally, given $\omega$,
+        a random variable $X$ is a mapping from $\omega$ to $\mathbb{R}$
+        \item Pick a random point in the disk $X62+y^2 \less 1$
+        Say some outcome is $(\alpha, \beta)$, then $\alpha^2$ is valid.
+    \end{itemize}
 \end{document}
