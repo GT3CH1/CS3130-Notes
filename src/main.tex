@@ -1,0 +1,81 @@
+%! Author = gcpease
+%! Date = 2/12/2021
+
+% Preamble
+\documentclass[12pt]{article}
+
+% Packages
+\usepackage{amsmath}
+\usepackage{paracol}
+\usepackage{amssymb}
+\usepackage{nccmath}
+\usepackage[margin=0.2in]{geometry}
+% Document
+\begin{document}
+
+    \title{CS3130 - Quiz 1 Study Notes}
+
+
+    \section{Week 1}
+    \begin{itemize}
+        \setlength\itemsep{0.1em}
+        \item A set is a collection of unique/district objects. ie, $\{3,8,6\}$ It must not contain any duplicates.
+        \item X is an element of a $x \in A$, or X is not an element $x \notin A$ Empty set is $ 0 = \{\}$ 
+        \item A subset of another set (B) is if every element in the first is (A) in the other, $A \subseteq B$ 
+        \item An event is a subset of a sample space, ie $\{2,4, 6\} \subseteq \{1,2,3,4,5,6\}$ 
+        \item A union is the set of all elements in A or B, or both, $A \cup B$ 
+        \item An intersection of two sets is where A and B happen, $A \cap B$, or if its empty, $A \cap B = 0$ is disjoint. 
+        \item A compliment is all the elements in A where A did not occur, $A^c = 1 - A$ 
+    \end{itemize}
+    \section{Week 2}
+    \begin{itemize}
+        \setlength\itemsep{0.1em}
+        \item Demorgans law: $(A \cup B)^c = A^c \cap B^c$, $(A \cap B)^c = A^c \cup B^c$
+        \item A sample space is a set of all possible outcomes.
+        \item $P(A \cup B) = P(A) + P(B)$ only if $P (A \cap B) = 0$, if not, $= P(A) + (B) - A \cap B$
+        \item If we have two experiements with sample space $\omega$ then new sample space is $ \omega \times \omega $ or $ \omega ^n $
+        \item Example: pick a number between 1 and 100... What is the possibility of: \newline
+            The number has one digit? $A=\{1,2,3,4,5,6,7,8,9\}$, $P(A) = \frac{|A|}{|\omega|} = \frac{9}{100}$ \newline
+            The number has two digits? $B=\{10,11,...,99\}$, $P(B) = \frac{9}{10}$ \newline
+            The probability of $ \% 4$? $C=\{4,8,12,16,...,100\}$, $P(C) = \frac{25}{100} = \frac{1}{4}$ \newline
+            What is $C^c$? $P(C^c) = 1 - P(C) = 1 - \frac{1}{4} = \frac{1}{4}$
+        \item $P(A|B) = \frac{P(A \cap B)}{P(B)}$
+        \item Example: We toss three fair coins. What is the prob. that the first coin turns up as T given there was one T? \newline
+            $\omega = 2$, $\omega \times \omega \times \omega = \omega^3 = 8$ \newline
+            $P(A) =$ First coin toss is T, $P(B)$ = One coin is T. \newline
+            $P(B) = \{(H,H,T),(T,H,H),(H,T,H)\} = 3$ \newline
+            $P(A \cap B) = \{(T,H,H)\}  = 1$, $\frac{P(A \cap B)}{P(B)} = \frac{1}{3}$
+    \end{itemize}
+    \section{Week 3}
+    \begin{itemize}
+        \setlength\itemsep{0.1em}
+        \item $A^c = \omega \backslash A$, $A \backslash B = A \cap B^c$
+        \item Example (mad cow),T=Test is positive, B=has disease.: Given $P(T|B) = 0.7$, $P(T|B^c) = 0.1$, $P(T) = 0.2$, what is $P(B)$? $(P(B) = x)$ \newline
+            $P(A) = P(A|B)P(B) + P(A|B^c)P(B^c)$, $P(T) = P(T|B)P(B) + P(T|B^c)P(B^c) == 0.2 = 0.7x + 0.1(1-x) = \frac{1}{6}$
+    \end{itemize}
+    \section{Week 4}
+    \begin{itemize}
+        \setlength\itemsep{0.1em}
+        \item A, B, C are events, A, B ,C are jointly independent if all the following hold: \newline
+            \begin{fleqn}
+                $
+                P(A|B \cap C) = P(A) \newline
+                P(A|B \cap C^c) = P(A) \newline
+                P(A|B^c \cap C ) = P(A) \newline
+                P(A|B^c \cap C^c) = P(A) \newline
+                $
+            \end{fleqn}
+        \item Bayes rule: $P(A|B) = P(B|A)\frac{P(A)}{P(B)}$
+        \item Example: Supposed that a test for a certain rare disease is 95\% accurate. Ie, suppose that for a person with the disease,
+        the test is positive with probability 0.95 and for a person without the disease, 0.95. Suppose that a random person drawn from
+        the population has the disease with probability 0.0001 ($\frac{1}{10^4}$). Suppose that person A gets the test and it is positive.
+        What is the probibiility of them actually having the disease? \newline\newline
+        $P(D)$ = Person has disease = $\frac{1}{10^4}$, $P(D|T)$ = Test is positive - What we are looking for. \newline
+        $P(T|D) = 0.95$, $P(T^c|D) = 0.05$, $P(T|D^c) = 0.05$, $P(T^c|D^c) = 0.95$ \newline
+        Use Bayes rule: $P(D|T) = P(T|D)\frac{P(D)}{P(T)}$ but we don't know $P(T)$, so use law of total probability. \newline
+        $P(T) = P(T|D)P(D)+P(T|D^c)P(D^c) == P(T) = 0.95(0.0001) + 0.05(1-\frac{1}{10^4})$, $P(T) = 0.0019$
+    \end{itemize}
+
+
+
+\end{document}
